@@ -169,6 +169,7 @@ AIDL 文件创建完成，需要手动build项目
 
 #### 创建客户端
 首先需要创建AIDL文件，可以直接把服务端的文件复制过来，注意包名依旧是服务端包名，使用到的对象包名亦然
+![客户端结构](https://github.com/ruoxuanFu/AndroidTips/blob/main/AIDLTest/images/Client%E7%BB%93%E6%9E%84%E7%9B%AE%E5%BD%95.png)
 
 ##### 在客户端绑定服务端服务即可
 	public class MainActivity extends AppCompatActivity {
