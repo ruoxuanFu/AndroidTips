@@ -3,7 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/123/AndroidTips/ConstraintLayoutTest/app/src/main/res/layout/activity_barrier.xml" value="0.36041666666666666" />
+        <entry key="..\:/123/AndroidTips/ConstraintLayoutTest/app/src/main/res/layout/activity_constraint_circle.xml" value="0.36041666666666666" />
+        <entry key="..\:/123/AndroidTips/ConstraintLayoutTest/app/src/main/res/layout/activity_constraint_set.xml" value="0.22" />
+        <entry key="..\:/123/AndroidTips/ConstraintLayoutTest/app/src/main/res/layout/activity_constraint_set_small.xml" value="0.18" />
+        <entry key="..\:/123/AndroidTips/ConstraintLayoutTest/app/src/main/res/layout/activity_flow.xml" value="0.3463541666666667" />
+        <entry key="..\:/123/AndroidTips/ConstraintLayoutTest/app/src/main/res/layout/activity_image_filter_view.xml" value="0.36041666666666666" />
         <entry key="..\:/123/AndroidTips/ConstraintLayoutTest/app/src/main/res/layout/activity_main.xml" value="0.3463541666666667" />
+        <entry key="..\:/123/AndroidTips/ConstraintLayoutTest/app/src/main/res/layout/bg_edit_radius40.xml" value="0.36041666666666666" />
+        <entry key="..\:/123/AndroidTips/ConstraintLayoutTest/app/src/main/res/layout/layout_test_btn.xml" value="0.36041666666666666" />
       </map>
     </option>
   </component>

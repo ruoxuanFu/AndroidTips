@@ -6,4 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btnConstraintCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="圆形定位"
+        app:layout_constraintBottom_toTopOf="@+id/btnBarrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btnBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="屏障约束"
+        app:layout_constraintBottom_toTopOf="@+id/btnFlow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConstraintCircle" />
+
+    <Button
+        android:id="@+id/btnFlow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flow约束"
+        app:layout_constraintBottom_toTopOf="@+id/btnConstraintSet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBarrier" />
+
+    <Button
+        android:id="@+id/btnConstraintSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ConstraintSet约束"
+        app:layout_constraintBottom_toTopOf="@+id/btnImageFilterView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFlow" />
+
+    <Button
+        android:id="@+id/btnImageFilterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ImageFilterView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConstraintSet" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ImageFilterViewActivity">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/altSrc"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grey"
+        android:scaleType="centerCrop"
+        app:altSrc="@mipmap/bg_image_filter_view_1"
+        app:srcCompat="@mipmap/bg_image_filter_view"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/crossfade"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grey"
+        android:scaleType="centerCrop"
+        app:altSrc="@mipmap/bg_image_filter_view"
+        app:srcCompat="@mipmap/bg_image_filter_view_1"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/saturation"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grey"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/bg_image_filter_view"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/brightness"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grey"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/bg_image_filter_view"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/warmth"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grey"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/bg_image_filter_view"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/contrast"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grey"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/bg_image_filter_view"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/round"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grey"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/bg_image_filter_view"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/roundPercent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grey"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/bg_image_filter_view"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/imgFlow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:constraint_referenced_ids="altSrc,crossfade,saturation,brightness,warmth,contrast,round,roundPercent,round2"
+        app:flow_horizontalGap="15dp"
+        app:flow_verticalGap="15dp"
+        app:flow_wrapMode="chain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:max="100"
+        android:progress="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgFlow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
