@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/123/AndroidTips/MotionLayoutTest/app/src/main/res/layout/activity_constraintset.xml" value="0.3548717948717949" />
+        <entry key="..\:/123/AndroidTips/MotionLayoutTest/app/src/main/res/layout/activity_main.xml" value="0.3463541666666667" />
+        <entry key="..\:/123/AndroidTips/MotionLayoutTest/app/src/main/res/layout/activity_on_swipe.xml" value="0.1" />
+        <entry key="..\:/123/AndroidTips/MotionLayoutTest/app/src/main/res/layout/bg_circular.xml" value="0.359375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
