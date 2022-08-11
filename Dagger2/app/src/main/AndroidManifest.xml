@@ -4,6 +4,7 @@
     package="com.fdd.mydagger2test">
 
     <application
+        android:name=".loginmvptest.LoginTestApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,6 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyDagger2Test"
         tools:targetApi="31">
+        <activity
+            android:name=".loginmvptest.ui.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".subcomponent.SubComponentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".componentdependence.ComponentDependenceTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".qualifiertest.QualifierTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mpvtest.MvpTestActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

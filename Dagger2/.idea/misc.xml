@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/123/AndroidTips/Dagger2/app/src/main/res/layout/activity_login.xml" value="0.3463541666666667" />
         <entry key="..\:/123/AndroidTips/Dagger2/app/src/main/res/layout/activity_main.xml" value="0.3463541666666667" />
+        <entry key="..\:/123/AndroidTips/Dagger2/app/src/main/res/layout/activity_mvp_test.xml" value="0.36041666666666666" />
+        <entry key="..\:/123/AndroidTips/Dagger2/app/src/main/res/layout/activity_qualifier_test.xml" value="0.3463541666666667" />
+        <entry key="..\:/123/AndroidTips/Dagger2/app/src/main/res/layout/activity_sub_component.xml" value="0.3463541666666667" />
       </map>
     </option>
   </component>

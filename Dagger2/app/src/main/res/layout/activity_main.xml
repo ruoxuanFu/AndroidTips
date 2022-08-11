@@ -6,4 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btnMvpTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MvpTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnQualifierTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QualifierTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMvpTest" />
+
+    <Button
+        android:id="@+id/btnComponentDependenceTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ComponentDependenceTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnQualifierTest" />
+
+    <Button
+        android:id="@+id/btnSubComponent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SubComponentTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnComponentDependenceTest" />
+
+    <Button
+        android:id="@+id/btnLoginMvpTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LoginMvpTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSubComponent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
