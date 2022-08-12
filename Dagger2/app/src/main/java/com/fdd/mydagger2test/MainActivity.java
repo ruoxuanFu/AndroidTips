@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fdd.mydagger2test.coffeemachinetest.CoffeeMachineActivity;
 import com.fdd.mydagger2test.componentdependence.ComponentDependenceTestActivity;
 import com.fdd.mydagger2test.databinding.ActivityMainBinding;
 import com.fdd.mydagger2test.loginmvptest.ui.LoginActivity;
@@ -29,5 +30,6 @@ public class MainActivity extends AppCompatActivity {
                 ComponentDependenceTestActivity.class)));
         binding.btnSubComponent.setOnClickListener(view -> startActivity(new Intent(this, SubComponentActivity.class)));
         binding.btnLoginMvpTest.setOnClickListener(view -> startActivity(new Intent(this, LoginActivity.class)));
+        binding.btnCoffeeMachineTest.setOnClickListener(view -> startActivity(new Intent(this, CoffeeMachineActivity.class)));
     }
 }

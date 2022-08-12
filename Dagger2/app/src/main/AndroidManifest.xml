@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MyDagger2Test"
         tools:targetApi="31">
         <activity
+            android:name=".coffeemachinetest.CoffeeMachineActivity"
+            android:exported="false" />
+        <activity
             android:name=".loginmvptest.ui.LoginActivity"
             android:exported="false" />
         <activity
