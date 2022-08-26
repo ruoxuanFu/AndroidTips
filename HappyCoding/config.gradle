@@ -1,0 +1,43 @@
+ext {
+    //android开发版本配置
+    android = [
+            compileSdk   : 32,
+            applicationId: "com.hc.hcapplication",
+            minSdk       : 23,
+            targetSdk    : 32,
+            versionCode  : 1,
+            versionName  : "1.0",
+    ]
+    //官方依赖
+    support = [
+            'androidx-appcompat': "androidx.appcompat:appcompat:1.5.0",
+            "google-material"   : "com.google.android.material:material:1.6.1",
+    ]
+    //依赖第三方配置
+    dependencies = [
+            //rxjava
+            "rxjava"             : "io.reactivex.rxjava3:rxjava:3.1.5",
+            "rxandroid"          : "io.reactivex.rxjava3:rxandroid:3.0.0",
+            //network
+            "okhttp"             : "com.squareup.okhttp3:okhttp:4.10.0",
+            "logging-interceptor": "com.squareup.okhttp3:logging-interceptor:4.10.0",
+            "retrofit"           : "com.squareup.retrofit2:retrofit:2.9.0",
+            "converter-gson"     : "com.squareup.retrofit2:converter-gson:2.9.0",
+            "adapter-rxjava"     : "com.squareup.retrofit2:adapter-rxjava3:2.9.0",
+
+            //glide图片加载
+            "glide"              : "com.github.bumptech.glide:glide:4.13.2",
+            "glide-compiler"     : "com.github.bumptech.glide:compiler:4.13.2",
+            //json解析
+            "gson"               : "com.google.code.gson:gson:2.9.1",
+
+            //阿里路由框架
+            "arouter-api"        : "com.alibaba:arouter-api:1.5.2",
+            "arouter-compiler"   : "com.alibaba:arouter-compiler:1.5.2",
+
+            "eventbus"           : "org.greenrobot:eventbus:3.3.1",
+    ]
+
+}
+
+
