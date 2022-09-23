@@ -1,3 +1,5 @@
+package com.sflep.course.util;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 

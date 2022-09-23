@@ -1,3 +1,5 @@
+package com.sflep.course.util;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
@@ -327,14 +329,15 @@ public class DeviceUtil {
 
     }
 
+
     /**
-     * sdk >= 21
+     * sdk >= 16
      *
      * @return boolean
      */
     @SuppressLint("ObsoleteSdkInt")
-    public static boolean hasLollipop() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+    public static boolean hasJellyBean() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN;
     }
 
     /**
@@ -348,12 +351,23 @@ public class DeviceUtil {
     }
 
     /**
-     * sdk >= 16
+     * sdk >= 21
      *
      * @return boolean
      */
     @SuppressLint("ObsoleteSdkInt")
-    public static boolean hasJellyBean() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN;
+    public static boolean hasLollipop() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
+
+    /**
+     * sdk >= 30
+     *
+     * @return boolean
+     */
+    @SuppressLint("ObsoleteSdkInt")
+    public static boolean hasR() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.R;
+    }
+
 }
