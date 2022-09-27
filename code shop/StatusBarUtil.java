@@ -1,4 +1,4 @@
-package com.sflep.course.util;
+package com.hc.myapplication.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -304,4 +304,54 @@ public class StatusBarUtil {
     /*
      * 适配状态栏高度---
      */
+
+    /**
+     * 全屏展示
+     * View.SYSTEM_UI_FLAG_LAYOUT_STABLE：全屏显示时保证尺寸不变。
+     * View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN：Activity全屏显示，状态栏显示在Activity页面上面。
+     * View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION：效果同View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+     * View.SYSTEM_UI_FLAG_HIDE_NAVIGATION：隐藏导航栏
+     * View.SYSTEM_UI_FLAG_FULLSCREEN：Activity全屏显示，且状态栏被隐藏覆盖掉。
+     * View.SYSTEM_UI_FLAG_VISIBLE：Activity非全屏显示，显示状态栏和导航栏。
+     * View.INVISIBLE：Activity伸展全屏显示，隐藏状态栏。
+     * View.SYSTEM_UI_LAYOUT_FLAGS：效果同View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+     * View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY：必须配合 View.SYSTEM_UI_FLAG_FULLSCREEN 和 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+     * 组合使用，达到的效果是拉出状态栏和导航栏后显示一会儿消失。
+     *
+     * 设置全屏theme
+     * <style name="Theme_FullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+     * <item name="android:windowFullscreen">true</item>
+     * <item name="windowNoTitle">true</item>
+     * <!--设置顶部状态栏是否为透明-->
+     * <item name="android:windowTranslucentStatus">false</item>
+     * <!--Android 5.x开始需要把颜色设置透明，否则顶部导航栏会呈现系统默认的浅灰色-->
+     * <item name="android:statusBarColor">@android:color/transparent</item>
+     * <!--设置顶部状态栏和底部导航栏是否为透明-->
+     * <item name="android:windowTranslucentNavigation">true</item>
+     * <item name="windowActionBar">false</item>
+     * <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+     * </style>
+     * 如果有的水滴屏幕可能会在状态栏的位置出现黑条
+     * 解决办法1：
+     * 在目标Activity中：
+     * if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+     * WindowManager.LayoutParams lp = getWindow().getAttributes();
+     * lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+     * getWindow().setAttributes(lp);
+     * } else {
+     * getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+     * getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+     * }
+     * 解决办法2：theme中添加这条属性
+     * <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+     */
+    public void fullScreen(Window window) {
+        View decorView = window.getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+    }
 }

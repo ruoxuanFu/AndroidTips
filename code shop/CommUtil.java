@@ -1,5 +1,6 @@
-package com.sflep.course.util;
+package com.hc.myapplication.utils;
 
+import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -12,6 +13,19 @@ import androidx.core.content.ContextCompat;
 
 /**
  * 直接在application中初始化
+ * <p>
+ * CommUtil.init(this, new MyHandler(Looper.getMainLooper()), Looper.getMainLooper().getThread().getId());
+ * static class MyHandler extends Handler {
+ *
+ * public MyHandler(@NonNull Looper looper) {
+ * super(looper);
+ * }
+ *
+ * public void handleMessage(@NonNull Message msg) {
+ * super.handleMessage(msg);
+ * }
+ * }
+ * </p>
  *
  * @author furuoxuan
  */
@@ -19,9 +33,9 @@ public class CommUtil {
 
     private static Application mApplication;
     private static Handler mHandler;
-    private static int mMainThreadId;
+    private static long mMainThreadId;
 
-    public static void init(Application application, Handler handler, int mainThreadId) {
+    public static void init(Application application, Handler handler, long mainThreadId) {
         mApplication = application;
         mHandler = handler;
         mMainThreadId = mainThreadId;
@@ -39,7 +53,7 @@ public class CommUtil {
         return mHandler;
     }
 
-    public static int getMainThreadId() {
+    public static long getMainThreadId() {
         return mMainThreadId;
     }
 
@@ -160,5 +174,30 @@ public class CommUtil {
                 ((startR + (int) (fraction * (endR - startR))) << 16) |
                 ((startG + (int) (fraction * (endG - startG))) << 8) |
                 ((startB + (int) (fraction * (endB - startB))));
+    }
+
+    /**
+     * 获取当前进程名
+     */
+    private static String getCurrentProcessName() {
+        int pid = android.os.Process.myPid();
+        String processName = "";
+        ActivityManager manager = (ActivityManager) mApplication
+                .getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
+        if (manager != null) {
+            for (ActivityManager.RunningAppProcessInfo process : manager.getRunningAppProcesses()) {
+                if (process.pid == pid) {
+                    processName = process.processName;
+                }
+            }
+        }
+        return processName;
+    }
+
+    /**
+     * 判断当前进程是否为主进程
+     */
+    public static boolean isMainProcess(Context sContext) {
+        return sContext.getApplicationContext().getPackageName().equals(getCurrentProcessName());
     }
 }

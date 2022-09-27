@@ -1,4 +1,4 @@
-package com.sflep.course.util;
+package com.hc.myapplication.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -36,10 +36,9 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
-import io.reactivex.Completable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.functions.Action;
 
 /**
  * 本地缓存
@@ -616,7 +615,9 @@ public class CacheUtil {
          */
         @SuppressLint("CheckResult")
         private void calculateCacheSizeAndCacheCount() {
-            Completable calculateCache = Completable.create(emitter -> {
+            //rxjava3
+            Disposable subscribe = Completable
+                    .fromAction(() -> {
                         int size = 0;
                         int count = 0;
                         File[] cachedFiles = cacheDir.listFiles();
@@ -629,16 +630,36 @@ public class CacheUtil {
                             cacheSize.set(size);
                             cacheCount.set(count);
                         }
-                        emitter.onComplete();
                     })
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread());
-
-            Disposable subscribe =
-                    calculateCache.subscribe(
+                    .subscribe(
                             () -> Log.d(TAG, "Cache size and cache count has calculated"),
                             Throwable::printStackTrace
                     );
+
+            //rxjava2
+            //Completable calculateCache = Completable.create(emitter -> {
+            //            int size = 0;
+            //            int count = 0;
+            //            File[] cachedFiles = cacheDir.listFiles();
+            //            if (cachedFiles != null) {
+            //                for (File cachedFile : cachedFiles) {
+            //                    size += calculateSize(cachedFile);
+            //                    count += 1;
+            //                    lastUsageDates.put(cachedFile, cachedFile.lastModified());
+            //                }
+            //                cacheSize.set(size);
+            //                cacheCount.set(count);
+            //            }
+            //            emitter.onComplete();
+            //        })
+            //        .subscribeOn(Schedulers.io())
+            //        .observeOn(AndroidSchedulers.mainThread());
+            //
+            //Disposable subscribe =
+            //        calculateCache.subscribe(
+            //                () -> Log.d(TAG, "Cache size and cache count has calculated"),
+            //                Throwable::printStackTrace
+            //        );
         }
 
         private void put(File file) {

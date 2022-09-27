@@ -1,4 +1,4 @@
-package com.sflep.course.util;
+package com.hc.myapplication.utils;
 
 import android.app.Activity;
 
