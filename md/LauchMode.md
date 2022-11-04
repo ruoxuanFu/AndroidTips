@@ -18,3 +18,18 @@
    3. FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS：设置了此标记的Activity相当于在AndroidManifest中设置了`android:excludeFromRecents="true"`，用户不会在手机的‘任务列表’中看到此任务栈
    4. FLAG_ACTIVITY_NO_HISTORY：设置了此标记的Activity相当于在AndroidManifest中设置了`android:noHistory="true"`，一旦退出Activity后，不会保存在任务栈中
    5. FLAG_ACTIVITY_NEW_TASK：此标记需要配合taskAffinity属性，把Activity存入taskAffinity所指的任务栈中（如果是启动其他应用则不需要设置taskAffinity），此外在非Activity中调用startActivity时，需要设置此标记，如在Service中启动Activity
+
+onNewIntent使用的陷阱：
+
+多次启动singleTask或者singleTop的activity时，调用onNewIntent中返回的intent参数始终是最开始实例化的数据，因此需要在每次回调onNewIntent时把新的intent数据set到程序中:
+
+```java
+@Override
+protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    //设置新的intent
+    setIntent(intent);
+    //此时的到的数据就是正确的了
+    int data = getIntent().getIntExtra("data", 0);
+}
+```
